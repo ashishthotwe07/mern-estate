@@ -3,7 +3,7 @@
 
 # MERN Real Estate Application
 
-Welcome to the MERN Real Estate Application! This application allows users to list, sell, or rent properties, search for properties based on keywords, and contact sellers. Owners can also edit their listings. The application is built using the MERN stack (MongoDB, Express.js, React.js, Node.js) along with Redux for state management.
+Welcome to the MERN Real Estate Application! This application allows users to list, sell, or rent properties, search for properties based on keywords, and contact sellers. Owners can also edit their listings. The application is built using the MERN stack (MongoDB, Express.js, React.js, Node.js) along with Redux Toolkit for state management.
 
 ## Features
 
