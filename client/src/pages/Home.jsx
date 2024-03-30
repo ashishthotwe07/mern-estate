@@ -40,7 +40,7 @@ export default function Home() {
         const data = await res.json();
         setSaleListings(data);
       } catch (error) {
-        log(error);
+        console.log(error);
       }
     };
     fetchOfferListings();
@@ -48,11 +48,11 @@ export default function Home() {
   return (
     <div>
       {/* top */}
-      <div class="flex flex-col gap-6 p-28 px-3 max-w-6xl mx-auto">
-        <h1 class="text-slate-700 font-bold text-3xl lg:text-6xl">
-          Discover your dream home <span class="text-slate-500">today</span>
+      <div className="flex flex-col gap-6 p-28 px-3 max-w-6xl mx-auto">
+        <h1 className="text-slate-700 font-bold text-3xl lg:text-6xl">
+          Discover your dream home <span className="text-slate-500">today</span>
         </h1>
-        <div class="text-gray-400 text-xs sm:text-sm">
+        <div className="text-gray-400 text-xs sm:text-sm">
           Your journey to finding the perfect home starts here.
           <br />
           Explore a curated selection of properties tailored to your needs.
@@ -61,7 +61,7 @@ export default function Home() {
           to={"/search"}
           className="text-xs sm:text-sm text-blue-800 font-bold hover:underline"
         >
-          Let's get started...
+          Lets get started...
         </Link>
       </div>
 
@@ -69,15 +69,14 @@ export default function Home() {
       <Swiper navigation>
         {offerListings &&
           offerListings.length > 0 &&
-          offerListings.map((listing) => (
-            <SwiperSlide>
+          offerListings.map((listing, index) => (
+            <SwiperSlide key={index}>
               <div
                 style={{
                   background: `url(${listing.imageUrls[0]}) center no-repeat`,
                   backgroundSize: "cover",
                 }}
                 className="h-[500px]"
-                key={listing._id}
               ></div>
             </SwiperSlide>
           ))}
